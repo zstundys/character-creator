@@ -3,13 +3,25 @@
   padding-bottom: 64px;
 }
 
+.characterEditor::before {
+  content: "";
+  background: hsl(195deg, 20%, 86%);
+  position: fixed;
+  top: 50vh;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+}
+
 .maxWidthWrapper {
-  
+  isolation: isolate;
+  position: relative;
+  z-index: 1;
 }
 
 .header {
   padding-bottom: 64px;
-  max-width: 65%;
 }
 
 .title {
@@ -26,14 +38,46 @@
 }
 
 .characterWrapper {
-    position: fixed;
-    height: 60vh;
-    min-height: 500px;
-    width: 200px;
-    left: calc(50% + 6rem);
-    top: 128px;
+  position: relative;
+  height: 500px;
+  margin-top: -420px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 112px;
 }
 
 .controlColumn {
-  max-width: 50%;
+  margin-top: 260px;
+  display: flex;
+  overflow: auto;
+  gap: 32px;
+  position: relative;
+  margin-left: -32px;
+  margin-right: -32px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+@media (min-width: 860px) {
+  .header {
+    max-width: 65%;
+  }
+
+  .controlColumn {
+    margin-top: 0;
+    max-width: 50%;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .characterWrapper {
+    margin-top: 0;
+    width: 200px;
+    position: fixed;
+    left: calc(50% + 6rem);
+    top: 128px;
+    left: calc(50% + 6rem);
+    min-height: 500px;
+    margin-bottom: 0;
+  }
 }
