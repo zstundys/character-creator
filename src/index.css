@@ -1,3 +1,7 @@
+:root {
+  --content-width: 1024px;
+}
+
 html,
 body,
 #root {
@@ -12,7 +16,7 @@ body {
 *,
 *:before,
 *:after {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
